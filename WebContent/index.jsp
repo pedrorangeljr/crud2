@@ -15,7 +15,7 @@
 
 	<div align="center">
 
-		<form action="ServletLogin" method="post">
+		<form action="ServeltLogin" method="post">
 
 			<table border="1" cellpadding="5">
 
