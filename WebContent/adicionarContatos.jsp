@@ -9,10 +9,10 @@
 <body>
 
 	<center>
-		<h1>Gerenciamento de Livros</h1>
+		<h1>Gerenciamento de Contatos</h1>
 		<h2>
-			&nbsp;&nbsp;&nbsp; <a href="ServletsLivro?acao=listartodos">Lista
-				Livros</a>
+			&nbsp;&nbsp;&nbsp; <a href="">Lista
+				Contatos</a>
 
 		</h2>
 	</center>
@@ -35,7 +35,7 @@
 				<tr>
 					<th>Nome:</th>
 					<td><input type="text" id="nome" name="nome" size="45"
-						value="${livros.titulo }" /></td>
+						value="" /></td>
 				</tr>
 				<tr>
 					<th>Telefone:</th>
