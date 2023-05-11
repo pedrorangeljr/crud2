@@ -1,9 +1,11 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import conexao.SingleConnection;
 import model.Contato;
@@ -47,5 +49,30 @@ public class DaoContato {
 			
 			e.printStackTrace();
 		}
+	}
+	
+	/*Metodo Listar Contatos*/
+	
+	public List<Contato> listar() throws Exception{
+		
+		List<Contato> listar = new ArrayList<Contato>();
+		
+		String sql = "select * from contato order by id asc";
+		PreparedStatement select = connection.prepareStatement(sql);
+		ResultSet resultado = select.executeQuery();
+		
+		while(resultado.next()) {
+			
+			Contato contato = new Contato();
+			
+			contato.setId(resultado.getLong("id"));
+			contato.setNome(resultado.getString("nome"));
+			contato.setTelefone(resultado.getString("telefone"));
+			contato.setEmail(resultado.getString("email"));
+			
+			listar.add(contato);
+		}
+		
+		return listar;
 	}
 }

@@ -10,7 +10,7 @@
 
   <h1>Bem vindo ao Sistema com Jsp</h1>
   <br/>
-  <a href="principal.jsp">Entrar no Sistema</a>
+  <a href="ServletsContatos?acao=listarTodos">Entrar no Sistema</a>
 
 </body>
 </html>

@@ -27,6 +27,20 @@ public class ServletsContatos extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		try {
+			
+			String acao = request.getParameter("acao");
+			
+			if(acao.equalsIgnoreCase("listarTodos")) {
+				
+				RequestDispatcher dispatcher = request.getRequestDispatcher("principal.jsp");
+				request.setAttribute("contatos", daoContato.listar());
+				dispatcher.forward(request, response);
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	
@@ -52,6 +66,7 @@ public class ServletsContatos extends HttpServlet {
 			}
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("principal.jsp");
+			request.setAttribute("contatos", daoContato.listar());
 			dispatcher.forward(request, response);
 			
 		} catch (Exception e) {

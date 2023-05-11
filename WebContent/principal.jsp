@@ -30,15 +30,15 @@
 				<th>E-mail</th>
 				<th>Ações</th>
 			</tr>
-			<c:forEach items="${livros}" var="livro">
+			<c:forEach items="${contatos}" var="contato">
 				<tr>
-					<td><c:out value="${livro.id }"></c:out></td>
-					<td><c:out value="${livro.titulo}"></c:out></td>
-					<td><c:out value="${livro.autor}"></c:out></td>
-					<td><c:out value="${livro.preco}"></c:out></td>
-					<td><a href="ServletsLivro?acao=editar&livro=${livro.id }" />Editar</a>
+					<td><c:out value="${contato.id }"></c:out></td>
+					<td><c:out value="${contato.nome}"></c:out></td>
+					<td><c:out value="${contato.telefone}"></c:out></td>
+					<td><c:out value="${contato.email}"></c:out></td>
+					<td><a href="ServletsLivro?acao=editar&livro=${contato.id }" />Editar</a>
 						&nbsp;&nbsp;&nbsp;&nbsp; <a
-						href="ServletsLivro?acao=delete&livro=${livro.id }"
+						href="ServletsLivro?acao=delete&livro=${contato.id }"
 						onclick="return confirm('Tem certeza que deseja excluir ?')">Excluir</a></td>
 				</tr>
 			</c:forEach>
