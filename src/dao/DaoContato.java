@@ -102,4 +102,27 @@ public class DaoContato {
 			e.printStackTrace();
 		}
 	}
+	
+	/*Metodo que não deica gravar Telefone duplicado*/
+	
+	public boolean validarTelefone(String telefone) {
+		
+		try {
+			
+			String sql = "select count(1) as quantidade from  contato where telefone = '"+telefone+"'";
+			PreparedStatement consultar = connection.prepareStatement(sql);
+			ResultSet resultado = consultar.executeQuery();
+			
+			if(resultado.next()) {
+				
+				return resultado.getInt("quantidade") <= 0;
+			}
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
 }

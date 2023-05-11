@@ -70,7 +70,12 @@ public class ServletsContatos extends HttpServlet {
 			contato.setTelefone(telefone);
 			contato.setEmail(email);
 			
-			if(id == null || id.isEmpty()) {
+			if(id == null || id.isEmpty() && !daoContato.validarTelefone(telefone)) {
+				
+				request.setAttribute("mensagem", "Já existe contato com o mesmo telefone");
+				
+			}
+			else if(id == null || id.isEmpty()) {
 				
 				daoContato.salvarContato(contato);
 			}
