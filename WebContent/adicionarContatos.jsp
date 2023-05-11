@@ -19,7 +19,7 @@
 
 	<div align="center">
 
-		<form action="ServletsLivro" method="post">
+		<form action="ServletsContatos" method="post">
 
 			<table border="1" cellpadding="5">
 				<caption>
