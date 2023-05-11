@@ -30,8 +30,18 @@ public class ServletsContatos extends HttpServlet {
 		try {
 			
 			String acao = request.getParameter("acao");
+			String contato = request.getParameter("contato");
 			
-			if(acao.equalsIgnoreCase("listarTodos")) {
+			if (acao.equalsIgnoreCase("delete")) {
+				
+				daoContato.deletar(contato);
+				
+				RequestDispatcher dispatcher = request.getRequestDispatcher("principal.jsp");
+				request.setAttribute("contatos", daoContato.listar());
+				dispatcher.forward(request, response);
+				
+			}
+			else if(acao.equalsIgnoreCase("listarTodos")) {
 				
 				RequestDispatcher dispatcher = request.getRequestDispatcher("principal.jsp");
 				request.setAttribute("contatos", daoContato.listar());

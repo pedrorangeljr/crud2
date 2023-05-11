@@ -38,7 +38,7 @@
 					<td><c:out value="${contato.email}"></c:out></td>
 					<td><a href="ServletsLivro?acao=editar&livro=${contato.id }" />Editar</a>
 						&nbsp;&nbsp;&nbsp;&nbsp; <a
-						href="ServletsLivro?acao=delete&livro=${contato.id }"
+						href="ServletsContatos?acao=delete&contato=${contato.id }"
 						onclick="return confirm('Tem certeza que deseja excluir ?')">Excluir</a></td>
 				</tr>
 			</c:forEach>
