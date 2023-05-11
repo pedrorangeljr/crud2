@@ -125,4 +125,58 @@ public class DaoContato {
 		
 		return false;
 	}
+	
+	/*metodo consultar usado para carregar os para edição*/
+	
+	public Contato consultar(String id) throws Exception {
+		
+		String sql = "select * from contato where id = '"+id+"'";
+		PreparedStatement consultar = connection.prepareStatement(sql);
+		ResultSet resultado = consultar.executeQuery();
+		
+		if(resultado.next()) {
+			
+			Contato contato = new Contato();
+			
+			contato.setId(resultado.getLong("id"));
+			contato.setNome(resultado.getString("nome"));
+			contato.setTelefone(resultado.getString("telefone"));
+			contato.setEmail(resultado.getString("email"));
+			
+			return contato;
+		}
+		
+		return null;
+	}
+	
+	/*Metodo Atualizar*/
+	
+	public void atualizar(Contato contato) {
+		
+		try {
+			
+			String sql = "update contato set nome = ?, telefone = ?, email = ? where id = " + contato.getId();
+			PreparedStatement update = connection.prepareStatement(sql);
+			
+			update.setString(1, contato.getNome());
+			update.setString(2, contato.getTelefone());
+			update.setString(3, contato.getEmail());
+			update.executeUpdate();
+			
+			connection.commit();
+			
+		} catch (Exception e) {
+			
+			try {
+				
+				connection.rollback();
+				
+			} catch (SQLException e1) {
+		
+				e1.printStackTrace();
+			}
+			
+			e.printStackTrace();
+		}
+	}
 }
