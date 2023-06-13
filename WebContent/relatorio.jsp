@@ -1,26 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Cadastrar Contatos</title>
+<title>Pagina de Relatorios</title>
 </head>
 <body>
 
 	<center>
-		<h1>Gerenciamento de Contatos</h1>
+		<h1>Relatorio de Contatos</h1>
 		<h2>
-			&nbsp;&nbsp;&nbsp; <a href="ServletsContatos?acao=listarTodos">Lista
-				Contatos</a>
+			&nbsp;&nbsp;&nbsp; <a href="ServletsContatos?acao=listarTodos">Lista Contatos</a>
 
 		</h2>
 	</center>
 
 	<div align="center">
 
-		<form action="ServletsContatos" method="post">
+		<form action="ServletsContatos?acao=imprimirRelatorio" method="get">
 
 			<table border="1" cellpadding="5">
 				<caption>
@@ -50,13 +48,14 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit"
-						value="Cadastrar" /></td>
+						value="Imprimir Relatorio" /></td>
 				</tr>
 
 			</table>
 
 		</form>
 	</div>
+
 
 </body>
 </html>

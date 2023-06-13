@@ -15,6 +15,7 @@
 		<h1>Gerenciamentos de Contatos</h1>
 		<h2>
 			<a href="adicionarContatos.jsp">Adicionar Contatos</a> &nbsp;&nbsp;&nbsp;
+			<a href="relatorio.jsp">Imprimir Relatorio</a> &nbsp;&nbsp;&nbsp;
 
 		</h2>
 	</center>

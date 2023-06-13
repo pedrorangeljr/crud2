@@ -56,6 +56,10 @@ public class ServletsContatos extends HttpServlet {
 				request.setAttribute("contatos", daoContato.listar());
 				dispatcher.forward(request, response);
 			}
+			else if(acao.equalsIgnoreCase("imprimirRelatorio")) {
+				
+				
+			}
 			
 		} catch (Exception e) {
 			// TODO: handle exception
